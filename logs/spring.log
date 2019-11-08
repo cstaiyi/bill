@@ -1,0 +1,164 @@
+2019-09-18 13:45:23.043  INFO 3972 --- [main] com.zcit.bill.BillApplication            : Starting BillApplication on WIN-0IGV8G7QCTN with PID 3972 (D:\workspace\bill\target\classes started by Administrator in D:\workspace\bill)
+2019-09-18 13:45:23.059 DEBUG 3972 --- [main] com.zcit.bill.BillApplication            : Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-09-18 13:45:23.059  INFO 3972 --- [main] com.zcit.bill.BillApplication            : The following profiles are active: dev
+2019-09-18 13:45:24.416  INFO 3972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8821 (http)
+2019-09-18 13:45:24.432  INFO 3972 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-09-18 13:45:24.432  INFO 3972 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-09-18 13:45:24.516  INFO 3972 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/bill]   : Initializing Spring embedded WebApplicationContext
+2019-09-18 13:45:24.516  INFO 3972 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1388 ms
+2019-09-18 13:45:24.770  WARN 3972 --- [main] com.zaxxer.hikari.HikariConfig           : {} - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2019-09-18 13:45:24.770  INFO 3972 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariCP - Starting...
+2019-09-18 13:45:25.388  INFO 3972 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariCP - Start completed.
+2019-09-18 13:45:26.121  INFO 3972 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-18 13:45:26.422  INFO 3972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8821 (http) with context path '/bill'
+2019-09-18 13:45:26.422  INFO 3972 --- [main] com.zcit.bill.BillApplication            : Started BillApplication in 3.839 seconds (JVM running for 5.097)
+2019-09-18 13:45:42.819  INFO 3972 --- [http-nio-8821-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/bill]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-18 13:45:42.819  INFO 3972 --- [http-nio-8821-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-09-18 13:45:42.825  INFO 3972 --- [http-nio-8821-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2019-09-18 13:45:42.873  INFO 3972 --- [http-nio-8821-exec-1] com.zcit.common.aspect.WebLogAspect      : 请求地址：http://localhost:8821/bill/register/pageBillUserInfo
+2019-09-18 13:45:42.873  INFO 3972 --- [http-nio-8821-exec-1] com.zcit.common.aspect.WebLogAspect      : HTTP METHOD:GET
+2019-09-18 13:45:42.874  INFO 3972 --- [http-nio-8821-exec-1] com.zcit.common.aspect.WebLogAspect      : CLASS_METHOD:com.zcit.bill.register.controller.RegisterController.pageBillUserInfo
+2019-09-18 13:45:42.875  INFO 3972 --- [http-nio-8821-exec-1] com.zcit.common.aspect.WebLogAspect      : 参数：[1, 10]
+2019-09-18 13:45:42.875  INFO 3972 --- [http-nio-8821-exec-1] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - X-Forwarded-For - String ip=null
+2019-09-18 13:45:42.875  INFO 3972 --- [http-nio-8821-exec-1] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - Proxy-Client-IP - String ip=null
+2019-09-18 13:45:42.875  INFO 3972 --- [http-nio-8821-exec-1] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - WL-Proxy-Client-IP - String ip=null
+2019-09-18 13:45:42.875  INFO 3972 --- [http-nio-8821-exec-1] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - HTTP_CLIENT_IP - String ip=null
+2019-09-18 13:45:42.875  INFO 3972 --- [http-nio-8821-exec-1] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - HTTP_X_FORWARDED_FOR - String ip=null
+2019-09-18 13:45:42.875  INFO 3972 --- [http-nio-8821-exec-1] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - getRemoteAddr - String ip=0:0:0:0:0:0:0:1
+2019-09-18 13:45:42.875  INFO 3972 --- [http-nio-8821-exec-1] com.zcit.common.aspect.WebLogAspect      : IP:0:0:0:0:0:0:0:1
+2019-09-18 13:45:42.996 DEBUG 3972 --- [http-nio-8821-exec-1] c.z.b.r.m.RegisterMapper.selectPage      : ==>  Preparing: SELECT COUNT(1) FROM t_register WHERE root = ? AND deleted = ? 
+2019-09-18 13:45:43.008 DEBUG 3972 --- [http-nio-8821-exec-1] c.z.b.r.m.RegisterMapper.selectPage      : ==> Parameters: BILL(String), 0(Integer)
+2019-09-18 13:45:43.055 DEBUG 3972 --- [http-nio-8821-exec-1] c.z.b.r.m.RegisterMapper.selectPage      : ==>  Preparing: SELECT id,user,password,root,name,create_time,creator_id,update_time,deleted FROM t_register WHERE root = ? AND deleted = ? ORDER BY create_time DESC LIMIT 0,10 
+2019-09-18 13:45:43.056 DEBUG 3972 --- [http-nio-8821-exec-1] c.z.b.r.m.RegisterMapper.selectPage      : ==> Parameters: BILL(String), 0(Integer)
+2019-09-18 13:45:43.101 DEBUG 3972 --- [http-nio-8821-exec-1] c.z.b.r.m.RegisterMapper.selectPage      : <==      Total: 1
+2019-09-18 13:45:43.102  INFO 3972 --- [http-nio-8821-exec-1] com.zcit.common.aspect.WebLogAspect      : 耗时：230
+2019-09-18 13:45:43.102 DEBUG 3972 --- [http-nio-8821-exec-1] com.zcit.common.aspect.WebLogAspect      : 返回值：BaseReturn(code=200, message=操作成功)
+2019-09-18 13:45:43.934  INFO 3972 --- [http-nio-8821-exec-2] com.zcit.common.aspect.WebLogAspect      : 请求地址：http://localhost:8821/bill/member/pageMember
+2019-09-18 13:45:43.934  INFO 3972 --- [http-nio-8821-exec-2] com.zcit.common.aspect.WebLogAspect      : HTTP METHOD:GET
+2019-09-18 13:45:43.934  INFO 3972 --- [http-nio-8821-exec-2] com.zcit.common.aspect.WebLogAspect      : CLASS_METHOD:com.zcit.bill.member.controller.MemberController.pageBillUserInfo
+2019-09-18 13:45:43.934  INFO 3972 --- [http-nio-8821-exec-2] com.zcit.common.aspect.WebLogAspect      : 参数：[1, 10, 7d021e14a79043e2b6d4816d12b7eab2]
+2019-09-18 13:45:43.934  INFO 3972 --- [http-nio-8821-exec-2] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - X-Forwarded-For - String ip=null
+2019-09-18 13:45:43.934  INFO 3972 --- [http-nio-8821-exec-2] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - Proxy-Client-IP - String ip=null
+2019-09-18 13:45:43.934  INFO 3972 --- [http-nio-8821-exec-2] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - WL-Proxy-Client-IP - String ip=null
+2019-09-18 13:45:43.934  INFO 3972 --- [http-nio-8821-exec-2] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - HTTP_CLIENT_IP - String ip=null
+2019-09-18 13:45:43.934  INFO 3972 --- [http-nio-8821-exec-2] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - HTTP_X_FORWARDED_FOR - String ip=null
+2019-09-18 13:45:43.934  INFO 3972 --- [http-nio-8821-exec-2] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - getRemoteAddr - String ip=0:0:0:0:0:0:0:1
+2019-09-18 13:45:43.934  INFO 3972 --- [http-nio-8821-exec-2] com.zcit.common.aspect.WebLogAspect      : IP:0:0:0:0:0:0:0:1
+2019-09-18 13:45:43.979 DEBUG 3972 --- [http-nio-8821-exec-2] c.z.b.m.mapper.MemberMapper.selectPage   : ==>  Preparing: SELECT COUNT(1) FROM t_member WHERE register_id = ? AND deleted = ? 
+2019-09-18 13:45:43.979 DEBUG 3972 --- [http-nio-8821-exec-2] c.z.b.m.mapper.MemberMapper.selectPage   : ==> Parameters: 7d021e14a79043e2b6d4816d12b7eab2(String), 0(Integer)
+2019-09-18 13:45:44.020 DEBUG 3972 --- [http-nio-8821-exec-2] c.z.b.m.mapper.MemberMapper.selectPage   : ==>  Preparing: SELECT id,name,money,register_id,create_time,creator_id,update_time,deleted FROM t_member WHERE register_id = ? AND deleted = ? ORDER BY create_time DESC LIMIT 0,10 
+2019-09-18 13:45:44.020 DEBUG 3972 --- [http-nio-8821-exec-2] c.z.b.m.mapper.MemberMapper.selectPage   : ==> Parameters: 7d021e14a79043e2b6d4816d12b7eab2(String), 0(Integer)
+2019-09-18 13:45:44.065 DEBUG 3972 --- [http-nio-8821-exec-2] c.z.b.m.mapper.MemberMapper.selectPage   : <==      Total: 4
+2019-09-18 13:45:44.066  INFO 3972 --- [http-nio-8821-exec-2] com.zcit.common.aspect.WebLogAspect      : 耗时：132
+2019-09-18 13:45:44.067 DEBUG 3972 --- [http-nio-8821-exec-2] com.zcit.common.aspect.WebLogAspect      : 返回值：BaseReturn(code=200, message=操作成功)
+2019-09-18 13:47:59.410  INFO 3972 --- [http-nio-8821-exec-4] com.zcit.common.aspect.WebLogAspect      : 请求地址：http://localhost:8821/bill/member/pageMember
+2019-09-18 13:47:59.410  INFO 3972 --- [http-nio-8821-exec-4] com.zcit.common.aspect.WebLogAspect      : HTTP METHOD:GET
+2019-09-18 13:47:59.410  INFO 3972 --- [http-nio-8821-exec-4] com.zcit.common.aspect.WebLogAspect      : CLASS_METHOD:com.zcit.bill.member.controller.MemberController.pageBillUserInfo
+2019-09-18 13:47:59.410  INFO 3972 --- [http-nio-8821-exec-4] com.zcit.common.aspect.WebLogAspect      : 参数：[1, 10, 7d021e14a79043e2b6d4816d12b7eab2]
+2019-09-18 13:47:59.411  INFO 3972 --- [http-nio-8821-exec-4] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - X-Forwarded-For - String ip=null
+2019-09-18 13:47:59.411  INFO 3972 --- [http-nio-8821-exec-4] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - Proxy-Client-IP - String ip=null
+2019-09-18 13:47:59.411  INFO 3972 --- [http-nio-8821-exec-4] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - WL-Proxy-Client-IP - String ip=null
+2019-09-18 13:47:59.411  INFO 3972 --- [http-nio-8821-exec-4] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - HTTP_CLIENT_IP - String ip=null
+2019-09-18 13:47:59.411  INFO 3972 --- [http-nio-8821-exec-4] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - HTTP_X_FORWARDED_FOR - String ip=null
+2019-09-18 13:47:59.411  INFO 3972 --- [http-nio-8821-exec-4] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - getRemoteAddr - String ip=0:0:0:0:0:0:0:1
+2019-09-18 13:47:59.411  INFO 3972 --- [http-nio-8821-exec-4] com.zcit.common.aspect.WebLogAspect      : IP:0:0:0:0:0:0:0:1
+2019-09-18 13:47:59.418  WARN 3972 --- [http-nio-8821-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@28bdb7bc (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:47:59.420  WARN 3972 --- [http-nio-8821-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6437619 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:47:59.420  WARN 3972 --- [http-nio-8821-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4306213a (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:47:59.421  WARN 3972 --- [http-nio-8821-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@20e312a8 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:47:59.421  WARN 3972 --- [http-nio-8821-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2638c9f6 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:47:59.422  WARN 3972 --- [http-nio-8821-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3bd69096 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:47:59.423  WARN 3972 --- [http-nio-8821-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@49ab7927 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:47:59.424  WARN 3972 --- [http-nio-8821-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@71e544e8 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:47:59.426  WARN 3972 --- [http-nio-8821-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@11f2545b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:47:59.427  WARN 3972 --- [http-nio-8821-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1eaf34d3 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:47:59.686 DEBUG 3972 --- [http-nio-8821-exec-4] c.z.b.m.mapper.MemberMapper.selectPage   : ==>  Preparing: SELECT COUNT(1) FROM t_member WHERE register_id = ? AND deleted = ? 
+2019-09-18 13:47:59.686 DEBUG 3972 --- [http-nio-8821-exec-4] c.z.b.m.mapper.MemberMapper.selectPage   : ==> Parameters: 7d021e14a79043e2b6d4816d12b7eab2(String), 0(Integer)
+2019-09-18 13:47:59.717 DEBUG 3972 --- [http-nio-8821-exec-4] c.z.b.m.mapper.MemberMapper.selectPage   : ==>  Preparing: SELECT id,name,money,register_id,create_time,creator_id,update_time,deleted FROM t_member WHERE register_id = ? AND deleted = ? ORDER BY create_time DESC LIMIT 0,10 
+2019-09-18 13:47:59.717 DEBUG 3972 --- [http-nio-8821-exec-4] c.z.b.m.mapper.MemberMapper.selectPage   : ==> Parameters: 7d021e14a79043e2b6d4816d12b7eab2(String), 0(Integer)
+2019-09-18 13:47:59.749 DEBUG 3972 --- [http-nio-8821-exec-4] c.z.b.m.mapper.MemberMapper.selectPage   : <==      Total: 4
+2019-09-18 13:47:59.749  INFO 3972 --- [http-nio-8821-exec-4] com.zcit.common.aspect.WebLogAspect      : 耗时：339
+2019-09-18 13:47:59.749 DEBUG 3972 --- [http-nio-8821-exec-4] com.zcit.common.aspect.WebLogAspect      : 返回值：BaseReturn(code=200, message=操作成功)
+2019-09-18 13:49:22.379  INFO 3972 --- [http-nio-8821-exec-7] com.zcit.common.aspect.WebLogAspect      : 请求地址：http://localhost:8821/bill/member/addOrUpdate
+2019-09-18 13:49:22.380  INFO 3972 --- [http-nio-8821-exec-7] com.zcit.common.aspect.WebLogAspect      : HTTP METHOD:POST
+2019-09-18 13:49:22.380  INFO 3972 --- [http-nio-8821-exec-7] com.zcit.common.aspect.WebLogAspect      : CLASS_METHOD:com.zcit.bill.member.controller.MemberController.add
+2019-09-18 13:49:22.380  INFO 3972 --- [http-nio-8821-exec-7] com.zcit.common.aspect.WebLogAspect      : 参数：[Member(name=刘湘洲, money=null, registerId=7d021e14a79043e2b6d4816d12b7eab2)]
+2019-09-18 13:49:22.380  INFO 3972 --- [http-nio-8821-exec-7] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - X-Forwarded-For - String ip=null
+2019-09-18 13:49:22.380  INFO 3972 --- [http-nio-8821-exec-7] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - Proxy-Client-IP - String ip=null
+2019-09-18 13:49:22.380  INFO 3972 --- [http-nio-8821-exec-7] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - WL-Proxy-Client-IP - String ip=null
+2019-09-18 13:49:22.380  INFO 3972 --- [http-nio-8821-exec-7] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - HTTP_CLIENT_IP - String ip=null
+2019-09-18 13:49:22.380  INFO 3972 --- [http-nio-8821-exec-7] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - HTTP_X_FORWARDED_FOR - String ip=null
+2019-09-18 13:49:22.380  INFO 3972 --- [http-nio-8821-exec-7] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - getRemoteAddr - String ip=0:0:0:0:0:0:0:1
+2019-09-18 13:49:22.380  INFO 3972 --- [http-nio-8821-exec-7] com.zcit.common.aspect.WebLogAspect      : IP:0:0:0:0:0:0:0:1
+2019-09-18 13:49:22.383  WARN 3972 --- [http-nio-8821-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@185f13b1 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:49:22.386  WARN 3972 --- [http-nio-8821-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@df82c15 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:49:22.387  WARN 3972 --- [http-nio-8821-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@66a527d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:49:22.388  WARN 3972 --- [http-nio-8821-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@66c80b9a (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:49:22.389  WARN 3972 --- [http-nio-8821-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@40934e49 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:49:22.390  WARN 3972 --- [http-nio-8821-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1244ab11 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:49:22.391  WARN 3972 --- [http-nio-8821-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1ae2b7ec (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:49:22.391  WARN 3972 --- [http-nio-8821-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@26e01eed (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:49:22.392  WARN 3972 --- [http-nio-8821-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1f181730 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:49:22.393  WARN 3972 --- [http-nio-8821-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariCP - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@28332be1 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2019-09-18 13:49:22.672 DEBUG 3972 --- [http-nio-8821-exec-7] c.z.b.m.mapper.MemberMapper.selectOne    : ==>  Preparing: SELECT id,name,money,register_id,create_time,creator_id,update_time,deleted FROM t_member WHERE register_id = ? AND name = ? AND deleted = ? 
+2019-09-18 13:49:22.672 DEBUG 3972 --- [http-nio-8821-exec-7] c.z.b.m.mapper.MemberMapper.selectOne    : ==> Parameters: 7d021e14a79043e2b6d4816d12b7eab2(String), 刘湘洲(String), 0(Integer)
+2019-09-18 13:49:22.704 DEBUG 3972 --- [http-nio-8821-exec-7] c.z.b.m.mapper.MemberMapper.selectOne    : <==      Total: 0
+2019-09-18 13:49:22.741 DEBUG 3972 --- [http-nio-8821-exec-7] c.z.b.member.mapper.MemberMapper.insert  : ==>  Preparing: INSERT INTO t_member ( id, name, money, register_id, create_time, update_time, deleted ) VALUES ( ?, ?, ?, ?, ?, ?, ? ) 
+2019-09-18 13:49:22.742 DEBUG 3972 --- [http-nio-8821-exec-7] c.z.b.member.mapper.MemberMapper.insert  : ==> Parameters: 9b47ba44da0f46e9962297bdcd0fbf97(String), 刘湘洲(String), 0(BigDecimal), 7d021e14a79043e2b6d4816d12b7eab2(String), 2019-09-18 13:49:22.705(Timestamp), 2019-09-18 13:49:22.705(Timestamp), 0(Integer)
+2019-09-18 13:49:22.808 DEBUG 3972 --- [http-nio-8821-exec-7] c.z.b.member.mapper.MemberMapper.insert  : <==    Updates: 1
+2019-09-18 13:49:22.808  INFO 3972 --- [http-nio-8821-exec-7] com.zcit.common.aspect.WebLogAspect      : 耗时：429
+2019-09-18 13:49:22.808 DEBUG 3972 --- [http-nio-8821-exec-7] com.zcit.common.aspect.WebLogAspect      : 返回值：BaseReturn(code=200, message=操作成功)
+2019-09-18 13:49:22.820  INFO 3972 --- [http-nio-8821-exec-8] com.zcit.common.aspect.WebLogAspect      : 请求地址：http://localhost:8821/bill/member/pageMember
+2019-09-18 13:49:22.820  INFO 3972 --- [http-nio-8821-exec-8] com.zcit.common.aspect.WebLogAspect      : HTTP METHOD:GET
+2019-09-18 13:49:22.820  INFO 3972 --- [http-nio-8821-exec-8] com.zcit.common.aspect.WebLogAspect      : CLASS_METHOD:com.zcit.bill.member.controller.MemberController.pageBillUserInfo
+2019-09-18 13:49:22.820  INFO 3972 --- [http-nio-8821-exec-8] com.zcit.common.aspect.WebLogAspect      : 参数：[1, 10, 7d021e14a79043e2b6d4816d12b7eab2]
+2019-09-18 13:49:22.820  INFO 3972 --- [http-nio-8821-exec-8] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - X-Forwarded-For - String ip=null
+2019-09-18 13:49:22.820  INFO 3972 --- [http-nio-8821-exec-8] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - Proxy-Client-IP - String ip=null
+2019-09-18 13:49:22.820  INFO 3972 --- [http-nio-8821-exec-8] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - WL-Proxy-Client-IP - String ip=null
+2019-09-18 13:49:22.820  INFO 3972 --- [http-nio-8821-exec-8] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - HTTP_CLIENT_IP - String ip=null
+2019-09-18 13:49:22.820  INFO 3972 --- [http-nio-8821-exec-8] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - HTTP_X_FORWARDED_FOR - String ip=null
+2019-09-18 13:49:22.820  INFO 3972 --- [http-nio-8821-exec-8] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - getRemoteAddr - String ip=0:0:0:0:0:0:0:1
+2019-09-18 13:49:22.820  INFO 3972 --- [http-nio-8821-exec-8] com.zcit.common.aspect.WebLogAspect      : IP:0:0:0:0:0:0:0:1
+2019-09-18 13:49:22.821 DEBUG 3972 --- [http-nio-8821-exec-8] c.z.b.m.mapper.MemberMapper.selectPage   : ==>  Preparing: SELECT COUNT(1) FROM t_member WHERE register_id = ? AND deleted = ? 
+2019-09-18 13:49:22.822 DEBUG 3972 --- [http-nio-8821-exec-8] c.z.b.m.mapper.MemberMapper.selectPage   : ==> Parameters: 7d021e14a79043e2b6d4816d12b7eab2(String), 0(Integer)
+2019-09-18 13:49:22.853 DEBUG 3972 --- [http-nio-8821-exec-8] c.z.b.m.mapper.MemberMapper.selectPage   : ==>  Preparing: SELECT id,name,money,register_id,create_time,creator_id,update_time,deleted FROM t_member WHERE register_id = ? AND deleted = ? ORDER BY create_time DESC LIMIT 0,10 
+2019-09-18 13:49:22.854 DEBUG 3972 --- [http-nio-8821-exec-8] c.z.b.m.mapper.MemberMapper.selectPage   : ==> Parameters: 7d021e14a79043e2b6d4816d12b7eab2(String), 0(Integer)
+2019-09-18 13:49:22.886 DEBUG 3972 --- [http-nio-8821-exec-8] c.z.b.m.mapper.MemberMapper.selectPage   : <==      Total: 5
+2019-09-18 13:49:22.887  INFO 3972 --- [http-nio-8821-exec-8] com.zcit.common.aspect.WebLogAspect      : 耗时：67
+2019-09-18 13:49:22.887 DEBUG 3972 --- [http-nio-8821-exec-8] com.zcit.common.aspect.WebLogAspect      : 返回值：BaseReturn(code=200, message=操作成功)
+2019-09-18 13:49:25.747  INFO 3972 --- [http-nio-8821-exec-9] com.zcit.common.aspect.WebLogAspect      : 请求地址：http://localhost:8821/bill/bill-member/pageBillMember
+2019-09-18 13:49:25.747  INFO 3972 --- [http-nio-8821-exec-9] com.zcit.common.aspect.WebLogAspect      : HTTP METHOD:GET
+2019-09-18 13:49:25.748  INFO 3972 --- [http-nio-8821-exec-9] com.zcit.common.aspect.WebLogAspect      : CLASS_METHOD:com.zcit.bill.billmember.controller.BillMemberController.pageBillMember
+2019-09-18 13:49:25.748  INFO 3972 --- [http-nio-8821-exec-9] com.zcit.common.aspect.WebLogAspect      : 参数：[1, 10, 9b47ba44da0f46e9962297bdcd0fbf97]
+2019-09-18 13:49:25.748  INFO 3972 --- [http-nio-8821-exec-9] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - X-Forwarded-For - String ip=null
+2019-09-18 13:49:25.748  INFO 3972 --- [http-nio-8821-exec-9] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - Proxy-Client-IP - String ip=null
+2019-09-18 13:49:25.748  INFO 3972 --- [http-nio-8821-exec-9] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - WL-Proxy-Client-IP - String ip=null
+2019-09-18 13:49:25.748  INFO 3972 --- [http-nio-8821-exec-9] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - HTTP_CLIENT_IP - String ip=null
+2019-09-18 13:49:25.748  INFO 3972 --- [http-nio-8821-exec-9] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - HTTP_X_FORWARDED_FOR - String ip=null
+2019-09-18 13:49:25.748  INFO 3972 --- [http-nio-8821-exec-9] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - getRemoteAddr - String ip=0:0:0:0:0:0:0:1
+2019-09-18 13:49:25.748  INFO 3972 --- [http-nio-8821-exec-9] com.zcit.common.aspect.WebLogAspect      : IP:0:0:0:0:0:0:0:1
+2019-09-18 13:49:25.787 DEBUG 3972 --- [http-nio-8821-exec-9] c.z.b.b.m.B.pageBillMember               : ==>  Preparing: SELECT COUNT(1) FROM t_bill_member b LEFT JOIN t_member m ON m.id = b.member_id LEFT JOIN t_bill bi ON bi.id = b.bill_id LEFT JOIN t_first_consumption f ON f.id = bi.first_consumption_id WHERE b.deleted = 0 AND b.member_id = ? 
+2019-09-18 13:49:25.787 DEBUG 3972 --- [http-nio-8821-exec-9] c.z.b.b.m.B.pageBillMember               : ==> Parameters: 9b47ba44da0f46e9962297bdcd0fbf97(String)
+2019-09-18 13:49:25.852 DEBUG 3972 --- [http-nio-8821-exec-9] c.z.b.b.m.B.pageBillMember               : ==>  Preparing: select b.id, b.bill_id, b.type, b.type_number, b.money, bi.mark, m.`name`, ( case b.type when 1 then '比例支付' else '具体金额' end ) as typeName, ( case b.type when 1 then CONCAT(b.type_number,'%') else b.type_number end ) as typeNumberName, f.`name` as firstConsumptionName, bi.second_consumption_name as secondConsumptionName, bi.money as billMoney, bi.bill_date as billDate, b.create_time from t_bill_member b left join t_member m on m.id = b.member_id left join t_bill bi on bi.id = b.bill_id left join t_first_consumption f on f.id = bi.first_consumption_id where b.deleted = 0 and b.member_id = ? order by bi.bill_date desc 
+2019-09-18 13:49:25.853 DEBUG 3972 --- [http-nio-8821-exec-9] c.z.b.b.m.B.pageBillMember               : ==> Parameters: 9b47ba44da0f46e9962297bdcd0fbf97(String)
+2019-09-18 13:49:25.886 DEBUG 3972 --- [http-nio-8821-exec-9] c.z.b.b.m.B.pageBillMember               : <==      Total: 0
+2019-09-18 13:49:25.886  INFO 3972 --- [http-nio-8821-exec-9] com.zcit.common.aspect.WebLogAspect      : 耗时：139
+2019-09-18 13:49:25.886 DEBUG 3972 --- [http-nio-8821-exec-9] com.zcit.common.aspect.WebLogAspect      : 返回值：BaseReturn(code=200, message=操作成功)
+2019-09-18 13:49:27.873  INFO 3972 --- [http-nio-8821-exec-10] com.zcit.common.aspect.WebLogAspect      : 请求地址：http://localhost:8821/bill/member/pageMember
+2019-09-18 13:49:27.873  INFO 3972 --- [http-nio-8821-exec-10] com.zcit.common.aspect.WebLogAspect      : HTTP METHOD:GET
+2019-09-18 13:49:27.873  INFO 3972 --- [http-nio-8821-exec-10] com.zcit.common.aspect.WebLogAspect      : CLASS_METHOD:com.zcit.bill.member.controller.MemberController.pageBillUserInfo
+2019-09-18 13:49:27.874  INFO 3972 --- [http-nio-8821-exec-10] com.zcit.common.aspect.WebLogAspect      : 参数：[1, 10, 7d021e14a79043e2b6d4816d12b7eab2]
+2019-09-18 13:49:27.874  INFO 3972 --- [http-nio-8821-exec-10] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - X-Forwarded-For - String ip=null
+2019-09-18 13:49:27.874  INFO 3972 --- [http-nio-8821-exec-10] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - Proxy-Client-IP - String ip=null
+2019-09-18 13:49:27.874  INFO 3972 --- [http-nio-8821-exec-10] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - WL-Proxy-Client-IP - String ip=null
+2019-09-18 13:49:27.874  INFO 3972 --- [http-nio-8821-exec-10] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - HTTP_CLIENT_IP - String ip=null
+2019-09-18 13:49:27.874  INFO 3972 --- [http-nio-8821-exec-10] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - HTTP_X_FORWARDED_FOR - String ip=null
+2019-09-18 13:49:27.874  INFO 3972 --- [http-nio-8821-exec-10] com.zcit.common.utils.IpUtil             : getIpAddress(HttpServletRequest) - getRemoteAddr - String ip=0:0:0:0:0:0:0:1
+2019-09-18 13:49:27.874  INFO 3972 --- [http-nio-8821-exec-10] com.zcit.common.aspect.WebLogAspect      : IP:0:0:0:0:0:0:0:1
+2019-09-18 13:49:27.907 DEBUG 3972 --- [http-nio-8821-exec-10] c.z.b.m.mapper.MemberMapper.selectPage   : ==>  Preparing: SELECT COUNT(1) FROM t_member WHERE register_id = ? AND deleted = ? 
+2019-09-18 13:49:27.907 DEBUG 3972 --- [http-nio-8821-exec-10] c.z.b.m.mapper.MemberMapper.selectPage   : ==> Parameters: 7d021e14a79043e2b6d4816d12b7eab2(String), 0(Integer)
+2019-09-18 13:49:27.941 DEBUG 3972 --- [http-nio-8821-exec-10] c.z.b.m.mapper.MemberMapper.selectPage   : ==>  Preparing: SELECT id,name,money,register_id,create_time,creator_id,update_time,deleted FROM t_member WHERE register_id = ? AND deleted = ? ORDER BY create_time DESC LIMIT 0,10 
+2019-09-18 13:49:27.943 DEBUG 3972 --- [http-nio-8821-exec-10] c.z.b.m.mapper.MemberMapper.selectPage   : ==> Parameters: 7d021e14a79043e2b6d4816d12b7eab2(String), 0(Integer)
+2019-09-18 13:49:27.984 DEBUG 3972 --- [http-nio-8821-exec-10] c.z.b.m.mapper.MemberMapper.selectPage   : <==      Total: 5
+2019-09-18 13:49:27.985  INFO 3972 --- [http-nio-8821-exec-10] com.zcit.common.aspect.WebLogAspect      : 耗时：112
+2019-09-18 13:49:27.986 DEBUG 3972 --- [http-nio-8821-exec-10] com.zcit.common.aspect.WebLogAspect      : 返回值：BaseReturn(code=200, message=操作成功)

@@ -1,0 +1,84 @@
+﻿server:
+  # 端口名
+  port: 8821
+  servlet:
+    # 访问加上项目名
+    context-path: /bill
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  servlet:
+    # 设置上传文件不限制大小
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+      enabled: true
+  datasource:
+    username: develop
+    password: develop
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.112.199.185:3306/bill?useTimezone=true&serverTimezone=GMT%2B8&characterEncoding=utf-8
+    hikari:
+      connection-timeout: 30000
+      auto-commit: true
+      max-lifetime: 1800000
+      pool-name: HikariCP
+      minimum-idle: 10
+      connection-test-query: SELECT 1
+      idle-timeout: 30000
+      maximum-pool-size: 10
+      read-only: false
+logging:
+  path: ./logs
+  level:
+    com.zcit: debug
+    root: info
+    logging.level.org.springframework.web: debug
+    logging.level.org.hibernate: error
+mybatis-plus:
+  configuration:
+    lazy-loading-enabled: true
+    cache-enabled: false
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath*:mappers/**/*Mapper.xml
+  global-config:
+    logic-not-delete-value: 0
+    field-strategy: 2
+    logic-delete-value: 1
+    db-column-underline: true
+    refresh-mapper: true
+    # 主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+    id-type: 3
+  type-aliases-package: com.zcit.**.entity
+#aliyun:
+#  accessKey: LTAI8AsbK21Nwj8H
+#  accessKeySecret: XC5QR0R59FCUShm6bIhZvNmzV5KEwO
+#  regionId: cn-shenzhen
+#  bucketName: weiheng
+#  picDir: picture/
+# 自定义配置数据
+config-attributes:
+  # 配置拦截路径
+  excludePathPatterns:
+    - /register/login
+    - /register/pageBillUserInfo
+    - /register/addOrUpdate
+    - /register/delete
+    - /member/pageMember
+    - /member/addOrUpdate
+    - /member/delete
+    - /member/findMemberList
+    - /first-consumption/pageFirstConsumption
+    - /first-consumption/addOrUpdate
+    - /first-consumption/delete
+    - /first-consumption/findSecondDetail
+    - /first-consumption/findFirstList
+    - /bill/addOrUpdate
+    - /bill/pageBill
+    - /bill/findBillById
+    - /bill/deleteById
+    - /bill-member/pageBillMember
+    - /bill-member/ListSum
+    - /bill-member/ListAll

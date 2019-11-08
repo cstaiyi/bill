@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zcit.bill.billmember.mapper.BillMemberMapper">
+    <!--根据id获得该条流水-->
+    <select id="findInfo" resultType="com.zcit.bill.billmember.entity.BillMember">
+        select
+            b.id,
+            b.bill_id,
+            b.type,
+            b.type_number,
+            b.money,
+            b.member_id,
+            m.`name`
+        from t_bill_member b
+        left join t_member m on m.id = b.member_id
+        where b.deleted = 0 and bill_id = #{id}
+    </select>
+    <!--根据会员id获得会员所有流水分页列表-->
+    <select id="pageBillMember" resultType="com.zcit.bill.billmember.entity.BillMember">
+        select
+            b.id,
+            b.bill_id,
+            b.type,
+            b.type_number,
+            b.money,
+            bi.mark,
+            m.`name`,
+            (
+                case b.type
+                    when 1 then '比例支付'
+                else
+                    '具体金额'
+                end
+            ) as typeName,
+            (
+                case b.type
+                    when 1 then CONCAT(b.type_number,'%')
+                else
+                    b.type_number
+                end
+            ) as typeNumberName,
+            f.`name` as firstConsumptionName,
+          bi.second_consumption_name as secondConsumptionName,
+          bi.money as billMoney,
+          bi.bill_date as billDate,
+          b.create_time
+        from t_bill_member b
+        left join t_member m on m.id = b.member_id
+        left join t_bill bi on bi.id = b.bill_id
+        left join t_first_consumption f on f.id = bi.first_consumption_id
+        where b.deleted = 0 and b.member_id = #{id}
+        order by bi.bill_date desc
+    </select>
+    <select id="listSum" resultType="com.zcit.bill.billmember.entity.BillMember">
+        SELECT
+           SUM(b.money) sumMoney,
+            m.name,
+	        tb.bill_date,
+            tb.first_consumption_id firstConsumptionId,
+            f.name firstConsumptionName,
+            tb.second_consumption_name secondConsumptionName
+        FROM
+            t_bill_member b
+        LEFT JOIN t_member m ON m.id = b.member_id
+        LEFT JOIN t_bill tb ON tb.id = b.bill_id
+        LEFT JOIN t_first_consumption f ON f.id = tb.first_consumption_id
+        WHERE b.deleted = 0
+        <if test="firstConsumptionId != null and firstConsumptionId != ''">
+            AND f.id = #{firstConsumptionId}
+        </if>
+        <if test="secondConsumptionName != null and secondConsumptionName != ''">
+            AND tb.second_consumption_name = #{secondConsumptionName}
+        </if>
+        <if test="billDate != null and billDate != ''">
+            AND DATE_FORMAT(tb.bill_date,'%Y-%m')=#{billDate}
+        </if>
+        AND tb.second_consumption_name &lt;&gt; '缴纳'
+        AND tb.second_consumption_name &lt;&gt; '取出'
+        GROUP BY
+            m.name
+    </select>
+    <select id="listAll" resultType="com.zcit.bill.billmember.entity.BillMember">
+         SELECT
+           SUM(b.money) sumMoney,
+            m.name,
+            tb.bill_date,
+            tb.first_consumption_id firstConsumptionId,
+            f.name firstConsumptionName,
+            tb.second_consumption_name secondConsumptionName
+        FROM
+            t_bill_member b
+        LEFT JOIN t_member m ON m.id = b.member_id
+        LEFT JOIN t_bill tb ON tb.id = b.bill_id
+        LEFT JOIN t_first_consumption f ON f.id = tb.first_consumption_id
+        WHERE b.deleted = 0
+        <if test="firstConsumptionId != null and firstConsumptionId != ''">
+            AND f.id = #{firstConsumptionId}
+        </if>
+        <if test="secondConsumptionName != null and secondConsumptionName != ''">
+            AND tb.second_consumption_name = #{secondConsumptionName}
+        </if>
+        AND tb.second_consumption_name &lt;&gt; '缴纳'
+        AND tb.second_consumption_name &lt;&gt; '取出'
+        GROUP BY
+            m.name
+    </select>
+</mapper>

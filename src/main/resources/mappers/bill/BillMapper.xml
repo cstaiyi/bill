@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zcit.bill.bill.mapper.BillMapper">
+    <!--该账本流水分页展示-->
+    <select id="pageBill" resultType="com.zcit.bill.bill.entity.Bill">
+        select
+            b.id,
+            b.bill_date,
+            b.second_consumption_name,
+            b.money,
+            b.create_time,
+            b.mark,
+            b.style,
+            f.`name` as firstConsumptionName,
+            (select group_concat(m.`name`) from t_bill_member bm left join t_member m on m.id = bm.member_id where b.id = bm.bill_id) as payName
+        from t_bill b
+        left join t_first_consumption f on f.id = b.first_consumption_id
+        where b.deleted = 0 and b.register_id = #{registerId}
+        <if test="firstConsumptionId != null and firstConsumptionId != ''">
+            and b.first_consumption_id= #{firstConsumptionId}
+        </if>
+        <if test="secondConsumptionName != null and secondConsumptionName != ''">
+            and b.second_consumption_name = #{secondConsumptionName}
+        </if>
+        order by b.bill_date desc
+    </select>
+</mapper>
